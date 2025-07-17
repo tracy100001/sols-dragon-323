@@ -10,8 +10,8 @@ BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
-  "ec2-52-15-95-218.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/website website .env.production"
-  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/supabase supabase .env.production"
+  "ec2-52-15-95-218.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production"
+  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production"
 )
 
 # === FUNCTIONS ===
@@ -54,8 +54,7 @@ EOF
 
   echo ""
   echo "➡️ [2/3] Sync .env File..."
-  ssh -i $KEY_PATH $USER@$HOST "mkdir -p $REMOTE_DIR/$SUB_DIR"
-  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/$ENV_FILE
+  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/$ENV_FILE || { echo "❌ Failed to upload env file"; exit 1; }
 
   echo ""
   echo "➡️ [3/3] Deploy via Docker Compose..."
@@ -68,7 +67,7 @@ EOF
     cd $SUB_DIR
     rm -rf .next
 
-    docker compose down || true
+    docker compose down --remove-orphans
     docker compose pull || true
     docker compose up -d --build
 EOF
