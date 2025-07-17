@@ -1,0 +1,3 @@
+- setup gmail
+- setup firebase project
+- scrape website template
