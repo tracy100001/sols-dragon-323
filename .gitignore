@@ -37,7 +37,8 @@ website/yarn-error.log*
 website/.pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-website/.env*
+website/.env.*
+supabase/.env.*
 
 # vercel
 website/.vercel

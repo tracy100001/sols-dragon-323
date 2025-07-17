@@ -1,6 +1,0 @@
-node_modules
-.git
-.next
-*.pem
-out
-deploy-to-ec2.sh
