@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   postgres:
-    image: supabase/postgres
+    image: supabase/postgres:15.8.1.116
     container_name: supabase_postgres
     restart: unless-stopped
     env_file:
@@ -18,7 +18,7 @@ services:
       - ./data:/var/lib/postgresql/data
 
   gotrue:
-    image: supabase/gotrue:v2.132.0
+    image: supabase/gotrue:v2.178.0-rc.1
     container_name: supabase_gotrue
     depends_on:
       - postgres
