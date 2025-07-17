@@ -4,10 +4,8 @@ set -e
 
 # === CONFIGURATION ===
 
-# Common settings
 KEY_PATH="~/Downloads/sols-keypair.pem"
 GIT_REPO="https://github.com/tracy100001/sols-dragon-323.git"
-APP_NAME="solstice-website"
 BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
@@ -18,80 +16,80 @@ TARGETS=(
 
 # === FUNCTIONS ===
 
-deploy_to_host() {
+run_stage() {
   local HOST="$1"
   local USER="$2"
   local REMOTE_DIR="$3"
   local SUB_DIR="$4"
   local ENV_FILE="$5"
 
-  echo "========================================"
-  echo "🚀 Deploying to $USER@$HOST"
-  echo "========================================"
+  echo "🔧 Running full deploy pipeline for $HOST..."
 
-  # Check if env file exists locally
-  if [ ! -f "$SUB_DIR/$ENV_FILE" ]; then
-    echo "❌ Env file $SUB_DIR/$ENV_FILE not found! Skipping $HOST."
-    return 1
-  fi
-
-  echo "==> 📡 Syncing env file..."
-  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$ENV_FILE
-
-  echo "==> 🔗 Connecting to $HOST..."
+  echo ""
+  echo "➡️ [1/3] Provision and Clone Repo..."
   ssh -i $KEY_PATH $USER@$HOST << EOF
     set -e
     sudo apt update
 
-    # Install Docker & Docker Compose if missing
     if ! command -v docker &> /dev/null; then
-      echo "==> 🐳 Installing Docker..."
+      echo "Installing Docker..."
       curl -fsSL https://get.docker.com -o get-docker.sh
       sh get-docker.sh
       sudo usermod -aG docker $USER
     fi
 
     if ! command -v docker-compose &> /dev/null; then
-      echo "==> 🐳 Installing Docker Compose..."
+      echo "Installing Docker Compose..."
       sudo curl -L "https://github.com/docker/compose/releases/download/v2.38.2/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
     fi
 
+    # Prepare project dir
+    rm -rf $REMOTE_DIR
     mkdir -p $REMOTE_DIR
     cd $REMOTE_DIR
 
-    # Clone repo if not present
-    if [ ! -d ".git" ]; then
-      echo "==> 🛠 Cloning repository..."
-      git clone -b $BRANCH $GIT_REPO .
-    else
-      echo "==> 🔄 Pulling latest changes..."
-      git reset --hard
-      git pull origin $BRANCH
-    fi
+    git clone -b $BRANCH $GIT_REPO .
+EOF
+
+  echo ""
+  echo "➡️ [2/3] Sync .env File..."
+  ssh -i $KEY_PATH $USER@$HOST "mkdir -p $REMOTE_DIR/$SUB_DIR"
+  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/.env
+
+  echo ""
+  echo "➡️ [3/3] Deploy via Docker Compose..."
+  ssh -i $KEY_PATH $USER@$HOST << EOF
+    set -e
+    cd $REMOTE_DIR
+    git reset --hard
+    git pull origin $BRANCH
 
     cd $SUB_DIR
-
-    echo "==> 🧹 Cleaning old build files..."
     rm -rf .next
 
-    echo "==> 🐳 Deploying with Docker Compose..."
-    docker compose pull || true
     docker compose down || true
+    docker compose pull || true
     docker compose up -d --build
-
-    echo "✅ Deployment on $HOST complete."
 EOF
+
+  echo "✅ $SUB_DIR deployed to $HOST successfully."
+  echo "--------------------------------------------"
+  echo ""
 }
 
-# Selective deploy by index passed as argument
+# === EXECUTION LOGIC ===
+
 INDEX=${1:-0}
 
 if (( INDEX < 0 || INDEX >= ${#TARGETS[@]} )); then
-  echo "❌ Invalid target index $INDEX"
+  echo "❌ Invalid index: $INDEX"
   exit 1
 fi
 
-deploy_to_host ${TARGETS[$INDEX]}
+# Parse selected target
+IFS=' ' read -r HOST USER REMOTE_DIR SUB_DIR ENV_FILE <<< "${TARGETS[$INDEX]}"
 
-echo "✅✅ Deployment completed successfully."
+run_stage "$HOST" "$USER" "$REMOTE_DIR" "$SUB_DIR" "$ENV_FILE"
+
+echo "🎉 ALL DONE — Project [$SUB_DIR] deployed to [$HOST]"
