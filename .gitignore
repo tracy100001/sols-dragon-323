@@ -4,6 +4,7 @@
 # root
 /node_modules
 generate-keys.js
+.env
 
 # dependencies
 website/node_modules
