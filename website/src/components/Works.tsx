@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 function Works({ page = false }: { page?: boolean }) {

@@ -1,5 +1,3 @@
-import React from "react";
-
 function Video() {
   return (
     <section className="py-10 bg-black" id="video">
