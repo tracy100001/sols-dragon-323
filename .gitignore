@@ -3,6 +3,7 @@
 
 # root
 /node_modules
+generate-keys.js
 
 # dependencies
 website/node_modules
