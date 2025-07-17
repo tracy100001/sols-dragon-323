@@ -10,7 +10,7 @@ BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
-  "ec2-52-15-95-218.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production"
+  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production"
   "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production"
 )
 

@@ -1,5 +1,4 @@
 import About from "@/components/About";
-import React from "react";
 
 function Page() {
   return (
