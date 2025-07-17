@@ -55,7 +55,7 @@ EOF
   echo ""
   echo "➡️ [2/3] Sync .env File..."
   ssh -i $KEY_PATH $USER@$HOST "mkdir -p $REMOTE_DIR/$SUB_DIR"
-  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/.env
+  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/$ENV_FILE
 
   echo ""
   echo "➡️ [3/3] Deploy via Docker Compose..."
