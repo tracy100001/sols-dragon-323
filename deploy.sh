@@ -4,7 +4,7 @@ set -e
 
 # === CONFIGURATION ===
 
-KEY_PATH="~/Downloads/sols-keypair.pem"
+KEY_PATH="$HOME/Downloads/sols-keypair.pem"
 GIT_REPO="https://github.com/tracy100001/sols-dragon-323.git"
 BRANCH="main"
 
@@ -54,17 +54,13 @@ EOF
 
   echo ""
   echo "➡️ [2/3] Sync .env File..."
-  scp -i $KEY_PATH "$SUB_DIR/$ENV_FILE" $USER@$HOST:$REMOTE_DIR/$SUB_DIR/$ENV_FILE || { echo "❌ Failed to upload env file"; exit 1; }
+  scp -i "$KEY_PATH" "./$SUB_DIR/$ENV_FILE" "$USER@$HOST:$REMOTE_DIR/$SUB_DIR/.env"
 
   echo ""
   echo "➡️ [3/3] Deploy via Docker Compose..."
   ssh -i $KEY_PATH $USER@$HOST << EOF
     set -e
-    cd $REMOTE_DIR
-    git reset --hard
-    git pull origin $BRANCH
-
-    cd $SUB_DIR
+    cd $REMOTE_DIR/$SUB_DIR
     rm -rf .next
 
     docker compose down --remove-orphans

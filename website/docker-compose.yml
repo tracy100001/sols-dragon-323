@@ -6,7 +6,5 @@ services:
     container_name: nextjs_app
     ports:
       - "3000:3000"
-    env_file:
-      - .env.production
     command: "pnpm start -- -p 3000 -H 0.0.0.0"
     restart: unless-stopped
