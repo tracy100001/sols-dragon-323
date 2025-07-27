@@ -66,6 +66,8 @@ EOF
     rm -rf .next
 
     docker compose down --remove-orphans
+    docker system prune -a --volumes
+    
     docker compose pull || true
     docker compose up -d --build
 EOF

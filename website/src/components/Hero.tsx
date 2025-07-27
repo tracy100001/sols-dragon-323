@@ -271,7 +271,7 @@ function Hero() {
         height={1000}
         alt=""
         className="circle_img"
-        src="/brand assets/New folder/Asset 16.png"
+        src="/img/brand/lens.png"
       />
       <ul className="list-unstyled slider_social_icon">
         <li>

@@ -7,8 +7,8 @@ function Footer() {
       <Image
         width={2000}
         height={1000}
-        src="/brand assets/pat/Asset 20.png"
-        alt="billboard image"
+        src="/img/brand/lens-pattern.png"
+        alt="lens pattern image"
         className="img-fluid w-100"
         style={{ maxHeight: "36rem", objectFit: "cover" }}
       />

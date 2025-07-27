@@ -16,8 +16,8 @@ export default function Home() {
       <Image
         width={2000}
         height={1000}
-        src="/brand assets/New folder/Asset 20.png"
-        alt="billboard image"
+        src="/img/brand/sky-banner.png"
+        alt="sky banner image"
         className="img-fluid w-100"
         style={{ maxHeight: "36rem", objectFit: "cover" }}
       />
@@ -29,7 +29,7 @@ export default function Home() {
       <Image
         width={2000}
         height={1000}
-        src="/brand assets/New folder/sol new Billboard_Mockup.png"
+        src="/img/brand/billboard.png"
         alt="billboard image"
         className="img-fluid w-100"
         style={{ maxHeight: "36rem", objectFit: "cover" }}
