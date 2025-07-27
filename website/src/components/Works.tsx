@@ -65,7 +65,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/1.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/1.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 col-md-6 port_item mb-4 videography">
@@ -91,7 +97,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/2.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/2.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 col-md-6 port_item mb-4 potrait">
@@ -115,7 +127,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/3.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/3.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 col-md-6 port_item mb-4 potrait videography">
@@ -139,7 +157,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/4.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/4.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 col-md-6 port_item mb-4 wedding">
@@ -165,7 +189,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/5.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/5.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 col-md-6 port_item mb-4 videography wedding">
@@ -189,7 +219,13 @@ function Works({ page = false }: { page?: boolean }) {
                 </div>
               </div>
               <div className="port_mask"></div>
-              <Image alt="#" className="img-fluid" src="/img/works/6.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt="#"
+                className="img-fluid"
+                src="/img/works/6.jpg"
+              />
             </div>
           </div>
         </div>

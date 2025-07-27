@@ -9,7 +9,13 @@ function Header() {
         <div className="row align-items-center">
           <div className="col-lg-2 col-6">
             <Link className="logo img-fluid" href="/">
-              <Image alt="" src="/img/general/logo.png" />
+              <img
+                alt=""
+                src="/img/general/logo.png"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
             </Link>
           </div>
           <div className="col-lg-8 justify-content-center d-none d-lg-flex">
@@ -65,6 +71,8 @@ function Header() {
         </button>
         <Link className="logo_offcanvas mb-auto" href="/">
           <Image
+            width={2000}
+            height={1000}
             alt="image"
             className="logo img-fluid"
             src="/img/general/logo.png"

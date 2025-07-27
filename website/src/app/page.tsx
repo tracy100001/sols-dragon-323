@@ -14,6 +14,8 @@ export default function Home() {
       <Hero />
       <About />
       <Image
+        width={2000}
+        height={1000}
         src="/brand assets/New folder/Asset 20.png"
         alt="billboard image"
         className="img-fluid w-100"
@@ -25,6 +27,8 @@ export default function Home() {
       <Works />
       <Blog />
       <Image
+        width={2000}
+        height={1000}
         src="/brand assets/New folder/sol new Billboard_Mockup.png"
         alt="billboard image"
         className="img-fluid w-100"

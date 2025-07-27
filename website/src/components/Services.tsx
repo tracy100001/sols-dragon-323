@@ -52,7 +52,12 @@ function Services({ page = false }: { page?: boolean }) {
                     <div className="col-lg-5 offset-lg-1">
                       <ul className="list-unstyled sv_tab_list">
                         <li>
-                          <Image alt="" src="img/services/small1.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small1.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>How do I book a session?</h4>
                             <p>
@@ -62,7 +67,12 @@ function Services({ page = false }: { page?: boolean }) {
                           </div>
                         </li>
                         <li>
-                          <Image alt="" src="img/services/small2.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small2.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>Do you travel for shoots?</h4>
                             <p>
@@ -75,9 +85,11 @@ function Services({ page = false }: { page?: boolean }) {
                   </div>
                 </div>
                 <Image
+                  width={2000}
+                  height={1000}
                   alt=""
                   className="services_tab_img"
-                  src="img/services/1.jpg"
+                  src="/img/services/1.jpg"
                 />
               </div>
             </div>
@@ -106,7 +118,12 @@ function Services({ page = false }: { page?: boolean }) {
                     <div className="col-lg-5 offset-lg-1">
                       <ul className="list-unstyled sv_tab_list">
                         <li>
-                          <Image alt="" src="img/services/small1.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small1.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>How do I book a session?</h4>
                             <p>
@@ -116,7 +133,12 @@ function Services({ page = false }: { page?: boolean }) {
                           </div>
                         </li>
                         <li>
-                          <Image alt="" src="img/services/small2.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small2.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>Do you travel for shoots?</h4>
                             <p>
@@ -129,9 +151,11 @@ function Services({ page = false }: { page?: boolean }) {
                   </div>
                 </div>
                 <Image
+                  width={2000}
+                  height={1000}
                   alt=""
                   className="services_tab_img"
-                  src="img/services/4.jpg"
+                  src="/img/services/4.jpg"
                 />
               </div>
             </div>
@@ -160,7 +184,12 @@ function Services({ page = false }: { page?: boolean }) {
                     <div className="col-lg-5 offset-lg-1">
                       <ul className="list-unstyled sv_tab_list">
                         <li>
-                          <Image alt="" src="img/services/small1.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small1.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>How do I book a session?</h4>
                             <p>
@@ -170,7 +199,12 @@ function Services({ page = false }: { page?: boolean }) {
                           </div>
                         </li>
                         <li>
-                          <Image alt="" src="img/services/small2.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small2.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>Do you travel for shoots?</h4>
                             <p>
@@ -183,9 +217,11 @@ function Services({ page = false }: { page?: boolean }) {
                   </div>
                 </div>
                 <Image
+                  width={2000}
+                  height={1000}
                   alt=""
                   className="services_tab_img"
-                  src="img/services/3.jpg"
+                  src="/img/services/3.jpg"
                 />
               </div>
             </div>
@@ -213,7 +249,12 @@ function Services({ page = false }: { page?: boolean }) {
                     <div className="col-lg-5 offset-lg-1">
                       <ul className="list-unstyled sv_tab_list">
                         <li>
-                          <Image alt="" src="img/services/small1.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small1.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>How do I book a session?</h4>
                             <p>
@@ -223,7 +264,12 @@ function Services({ page = false }: { page?: boolean }) {
                           </div>
                         </li>
                         <li>
-                          <Image alt="" src="img/services/small2.jpg" />
+                          <Image
+                            width={2000}
+                            height={1000}
+                            alt=""
+                            src="/img/services/small2.jpg"
+                          />
                           <div className="sv_tab_list_content">
                             <h4>Do you travel for shoots?</h4>
                             <p>
@@ -236,9 +282,11 @@ function Services({ page = false }: { page?: boolean }) {
                   </div>
                 </div>
                 <Image
+                  width={2000}
+                  height={1000}
                   alt=""
                   className="services_tab_img"
-                  src="img/services/2.jpg"
+                  src="/img/services/2.jpg"
                 />
               </div>
             </div>
@@ -321,7 +369,12 @@ function Services({ page = false }: { page?: boolean }) {
                 </h2>
               </div>
               <div className="img_eq" data-list="eq_lists_one">
-                <Image alt="" src="img/services/eq1.jpg" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  src="/img/services/eq1.jpg"
+                />
               </div>
             </div>
           </div>

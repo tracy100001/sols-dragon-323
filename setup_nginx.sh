@@ -11,7 +11,7 @@ TARGET_PORT="3000"  # Docker app port
 ssh -i "$SSH_KEY" $SERVER_USER@$SERVER_HOST << EOF
   set -e
 
-  echo "Updating system and installing dependencies..."
+  echo "Installing Nginx and Certbot..."
   sudo apt update
   sudo apt install -y nginx certbot python3-certbot-nginx
 
@@ -20,8 +20,8 @@ ssh -i "$SSH_KEY" $SERVER_USER@$SERVER_HOST << EOF
   sudo ufw allow 'Nginx Full'
   sudo ufw --force enable
 
-  echo "Creating Nginx config for $DOMAIN..."
-  sudo tee /etc/nginx/sites-available/$DOMAIN > /dev/null << EOL
+  echo "Setting up Nginx config for $DOMAIN..."
+  sudo tee /etc/nginx/sites-available/$DOMAIN > /dev/null << 'EOL'
 server {
     listen 80;
     server_name $DOMAIN;
@@ -30,7 +30,7 @@ server {
         proxy_pass http://localhost:$TARGET_PORT;
         proxy_http_version 1.1;
         proxy_set_header Upgrade \$http_upgrade;
-        proxy_set_header Connection 'upgrade';
+        proxy_set_header Connection "upgrade";
         proxy_set_header Host \$host;
         proxy_cache_bypass \$http_upgrade;
     }
@@ -39,14 +39,13 @@ EOL
 
   echo "Enabling site and reloading Nginx..."
   sudo ln -sf /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
-  sudo nginx -t
-  sudo systemctl reload nginx
+  sudo nginx -t && sudo systemctl restart nginx
 
-  echo "Obtaining SSL certificate with Certbot..."
+  echo "Requesting SSL certificate with Certbot..."
   sudo certbot --nginx -d $DOMAIN --non-interactive --agree-tos -m admin@$DOMAIN --redirect
 
-  echo "Setting up automatic renewal test..."
+  echo "Verifying Certbot auto-renew..."
   sudo certbot renew --dry-run
 
-  echo "Done! SSL configured and reverse proxy set up."
+  echo "✅ Nginx reverse proxy and SSL setup complete for $DOMAIN"
 EOF

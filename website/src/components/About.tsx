@@ -46,31 +46,39 @@ function About({ page = false }: { page?: boolean }) {
                 >
                   <li>
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid shadow-sm"
-                      src="img/about/ava1.jpg"
+                      src="/img/about/ava1.jpg"
                     />
                   </li>
                   <li>
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid shadow-sm"
-                      src="img/about/ava2.jpg"
+                      src="/img/about/ava2.jpg"
                     />
                   </li>
                   <li>
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid shadow-sm"
-                      src="img/about/ava3.jpg"
+                      src="/img/about/ava3.jpg"
                     />
                   </li>
                 </ul>
                 <a className="about_arrow_link go_btn" href="#video">
                   <Image
+                    width={2000}
+                    height={1000}
                     alt=""
                     className="img-fluid"
-                    src="img/about/arrow.png"
+                    src="/img/about/arrow.png"
                   />
                 </a>
               </div>
@@ -89,7 +97,13 @@ function About({ page = false }: { page?: boolean }) {
                 </p>
                 <h3 className="mb-0 lh-1 fw-normal">Zusee Lyn</h3>
               </div>
-              <Image alt="" className="about_me_img" src="img/about/1.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt=""
+                className="about_me_img"
+                src="/img/about/1.jpg"
+              />
             </div>
           </div>
           <div className="col-lg-4 mb-4">
@@ -105,7 +119,12 @@ function About({ page = false }: { page?: boolean }) {
             </p>
             <ul className="list-unstyled tool_list">
               <li>
-                <Image alt="" src="img/about/ph.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  src="/img/about/ph.png"
+                />
                 <div>
                   <p className="text-uppercase tc_heading mb-0">
                     Adobe Photoshop
@@ -114,14 +133,24 @@ function About({ page = false }: { page?: boolean }) {
                 </div>
               </li>
               <li>
-                <Image alt="" src="img/about/ae.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  src="/img/about/ae.png"
+                />
                 <div>
                   <p className="text-uppercase tc_heading mb-0">After Effect</p>
                   <p>Motion Graphics &amp; Visual Effects.</p>
                 </div>
               </li>
               <li>
-                <Image alt="" src="img/about/final.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  src="/img/about/final.png"
+                />
                 <div>
                   <p className="text-uppercase tc_heading mb-0">
                     Final cut Pro
@@ -141,13 +170,31 @@ function About({ page = false }: { page?: boolean }) {
               </a>
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <Image alt="" className="img-fluid" src="img/about/2.jpg" />
+                  <Image
+                    width={2000}
+                    height={1000}
+                    alt=""
+                    className="img-fluid"
+                    src="/img/about/2.jpg"
+                  />
                 </div>
                 <div className="swiper-slide">
-                  <Image alt="" className="img-fluid" src="img/about/3.jpg" />
+                  <Image
+                    width={2000}
+                    height={1000}
+                    alt=""
+                    className="img-fluid"
+                    src="/img/about/3.jpg"
+                  />
                 </div>
                 <div className="swiper-slide">
-                  <Image alt="" className="img-fluid" src="img/about/4.jpg" />
+                  <Image
+                    width={2000}
+                    height={1000}
+                    alt=""
+                    className="img-fluid"
+                    src="/img/about/4.jpg"
+                  />
                 </div>
               </div>
             </div>

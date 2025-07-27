@@ -40,6 +40,8 @@ function Page() {
                 <p>Use additional subheadings, images, or quotes as needed.</p>
 
                 <Image
+                  width={2000}
+                  height={1000}
                   src="/img/about/3.jpg"
                   alt="Article Image"
                   className="my-4 rounded-1 img-fluid"

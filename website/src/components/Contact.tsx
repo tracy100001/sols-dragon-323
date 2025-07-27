@@ -24,10 +24,21 @@ function Contact({ page = false }: { page?: boolean }) {
               Send me a message, and we can start to make your ideas a reality.
             </p>
             <div className="contact_box shadow-sm">
-              <Image alt="" className="contact_img" src="img/contact/1.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt=""
+                className="contact_img"
+                src="/img/contact/1.jpg"
+              />
               <ul className="contact_meta list-unstyled">
                 <li>
-                  <Image alt="" src="img/general/logo.png" />
+                  <Image
+                    width={2000}
+                    height={1000}
+                    alt=""
+                    src="/img/general/logo.png"
+                  />
                 </li>
                 <li>
                   <i className="ph ph-envelope"></i>
@@ -68,13 +79,31 @@ function Contact({ page = false }: { page?: boolean }) {
               data-cues="slideInUp"
             >
               <li>
-                <Image alt="" className="img-fluid" src="img/client/1.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  className="img-fluid"
+                  src="/img/client/1.png"
+                />
               </li>
               <li>
-                <Image alt="" className="img-fluid" src="img/client/2.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  className="img-fluid"
+                  src="/img/client/2.png"
+                />
               </li>
               <li>
-                <Image alt="" className="img-fluid" src="img/client/3.png" />
+                <Image
+                  width={2000}
+                  height={1000}
+                  alt=""
+                  className="img-fluid"
+                  src="/img/client/3.png"
+                />
               </li>
             </ul>
             <form action="#" className="contact_form bg_dark">

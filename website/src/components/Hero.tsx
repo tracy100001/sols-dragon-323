@@ -43,36 +43,44 @@ function Hero() {
                 <div className="col-5 mb-4">
                   <div className="slider_img">
                     <Image
+                      src="/img/slider/1.jpg"
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/1.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7 mb-4">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/2.jpg"
+                      src="/img/slider/2.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/3.jpg"
+                      src="/img/slider/3.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-5">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/4.jpg"
+                      src="/img/slider/4.jpg"
                     />
                   </div>
                 </div>
@@ -117,36 +125,44 @@ function Hero() {
                 <div className="col-5 mb-4">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/5.jpg"
+                      src="/img/slider/5.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7 mb-4">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/6.jpg"
+                      src="/img/slider/6.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/7.jpg"
+                      src="/img/slider/7.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-5">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/8.jpg"
+                      src="/img/slider/8.jpg"
                     />
                   </div>
                 </div>
@@ -193,36 +209,44 @@ function Hero() {
                 <div className="col-5 mb-4">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/9.jpg"
+                      src="/img/slider/9.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7 mb-4">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/10.jpg"
+                      src="/img/slider/10.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-7">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/11.jpg"
+                      src="/img/slider/11.jpg"
                     />
                   </div>
                 </div>
                 <div className="col-5">
                   <div className="slider_img">
                     <Image
+                      width={2000}
+                      height={1000}
                       alt=""
                       className="img-fluid"
-                      src="img/slider/12.jpg"
+                      src="/img/slider/12.jpg"
                     />
                   </div>
                 </div>
@@ -243,6 +267,8 @@ function Hero() {
         <ul className="list-unstyled slider_pagination"></ul>
       </div>
       <Image
+        width={2000}
+        height={1000}
         alt=""
         className="circle_img"
         src="/brand assets/New folder/Asset 16.png"

@@ -7,7 +7,13 @@ function Testimonial() {
         <div className="testi_slider mx-lg-10 rounded-2 testi_outer shadow-sm overflow-hidden">
           <div className="swiper-wrapper">
             <div className="swiper-slide bg_dark align-content-center d-flex">
-              <Image alt="" className="testi_img" src="img/about/ava1.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt=""
+                className="testi_img"
+                src="/img/about/ava1.jpg"
+              />
               <div className="testi_content">
                 <p className="tc_heading">
                   Working with this team was a fantastic experience. They
@@ -28,7 +34,13 @@ function Testimonial() {
               </div>
             </div>
             <div className="swiper-slide bg_dark align-content-center d-flex">
-              <Image alt="" className="testi_img" src="img/about/ava2.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt=""
+                className="testi_img"
+                src="/img/about/ava2.jpg"
+              />
               <div className="testi_content">
                 <p className="tc_heading">
                   The creativity and detail were exceptional. Every moment was
@@ -49,7 +61,13 @@ function Testimonial() {
               </div>
             </div>
             <div className="swiper-slide bg_dark align-content-center d-flex">
-              <Image alt="" className="testi_img" src="img/about/ava3.jpg" />
+              <Image
+                width={2000}
+                height={1000}
+                alt=""
+                className="testi_img"
+                src="/img/about/ava3.jpg"
+              />
               <div className="testi_content">
                 <p className="tc_heading">
                   From start to finish, everything was seamless. They understood

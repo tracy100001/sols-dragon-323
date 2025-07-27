@@ -5,13 +5,21 @@ function Footer() {
   return (
     <footer className="footer bg_dark">
       <Image
+        width={2000}
+        height={1000}
         src="/brand assets/pat/Asset 20.png"
         alt="billboard image"
         className="img-fluid w-100"
         style={{ maxHeight: "36rem", objectFit: "cover" }}
       />
       <div className="container text-center  py-10">
-        <Image alt="" className="footer_img" src="img/general/logo.png" />
+        <Image
+          width={2000}
+          height={1000}
+          alt=""
+          className="footer_img"
+          src="/img/general/logo.png"
+        />
         <ul className="list-unstyled d-flex align-items-center justify-content-center gap-4 my-4 footer_menu">
           <li>
             <Link href="/about">About</Link>

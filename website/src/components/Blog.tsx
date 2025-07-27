@@ -117,7 +117,7 @@ function Blog({ page = false }: { page?: boolean }) {
   }) {
     return (
       <div className="blog_box shadow-sm">
-        <Image alt="" src="img/news/1.jpg" />
+        <img alt="" src="/img/news/1.jpg" />
         <p className="blog_cat">{category}</p>
         <h3 className="mb-4">
           <a className="blog_link line-clamp-2" href="single-news.html">
