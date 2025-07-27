@@ -1,18 +1,13 @@
-# Stage 1: Build
-FROM node:20 AS builder
-WORKDIR /app
-COPY package*.json pnpm-lock.yaml ./
-RUN npm install -g pnpm && pnpm install --frozen-lockfile --prod
-COPY . .
-RUN npm run build
+FROM node:20
 
-# Stage 2: Run
-FROM node:20-alpine
 WORKDIR /app
-COPY --from=builder /app/.next .next
-COPY --from=builder /app/public public
-COPY --from=builder /app/package*.json ./
-RUN npm install --production
+
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm && pnpm install --frozen-lockfile --prod
+
+COPY . .
+
+RUN pnpm build
 
 EXPOSE 3000
 
