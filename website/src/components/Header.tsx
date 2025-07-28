@@ -8,7 +8,7 @@ function Header() {
       <div className="container-fluid px-4">
         <div className="row align-items-center">
           <div className="col-lg-2 col-6">
-            <Link className="logo img-fluid" href="/">
+            <a className="logo img-fluid" href="/">
               <img
                 alt=""
                 src="/img/general/logo.png"
@@ -16,29 +16,29 @@ function Header() {
                   objectFit: "cover",
                 }}
               />
-            </Link>
+            </a>
           </div>
           <div className="col-lg-8 justify-content-center d-none d-lg-flex">
             <ul className="list-unstyled d-flex align-items-center justify-content-center gap-4 mb-0 rdn_menu scroll_menu">
               <li>
-                <Link href="/about">About</Link>
+                <a href="/about">About</a>
               </li>
               <li>
-                <Link href="/services">Services</Link>
+                <a href="/services">Services</a>
               </li>
               <li>
-                <Link href="/works">Works</Link>
+                <a href="/works">Works</a>
               </li>
               <li>
-                <Link href="/blog">Blog</Link>
+                <a href="/blog">Blog</a>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
           <div className="col-lg-2 d-none d-lg-flex justify-content-end">
-            <Link className="rdn_btn header_btn go_btn" href="/contact">
+            <a className="rdn_btn header_btn go_btn" href="/contact">
               <span className="btn_top">
                 <i className="me-1 ph ph-chat-centered-text"></i>
                 Get Quote
@@ -47,7 +47,7 @@ function Header() {
                 <i className="me-1 ph ph-chat-centered-text"></i>
                 Get Quote
               </span>
-            </Link>
+            </a>
           </div>
           <div className="col-6 d-lg-none mobile_menu_box">
             <div className="mobile_menu_btn cursor_big">
@@ -69,7 +69,7 @@ function Header() {
         >
           <i className="ph ph-x"></i>
         </button>
-        <Link className="logo_offcanvas mb-auto" href="/">
+        <a className="logo_offcanvas mb-auto" href="/">
           <Image
             width={2000}
             height={1000}
@@ -77,10 +77,10 @@ function Header() {
             className="logo img-fluid"
             src="/img/general/logo.png"
           />
-        </Link>
+        </a>
         <div className="offcanvas_nav"></div>
         <div className="d-flex mt-auto">
-          <Link className="rdn_btn header_btn go_btn" href="/contact">
+          <a className="rdn_btn header_btn go_btn" href="/contact">
             <span className="btn_top">
               <i className="me-1 ph ph-chat-centered-text"></i>
               Get Quote
@@ -89,7 +89,7 @@ function Header() {
               <i className="me-1 ph ph-chat-centered-text"></i>
               Get Quote
             </span>
-          </Link>
+          </a>
         </div>
       </div>
     </header>

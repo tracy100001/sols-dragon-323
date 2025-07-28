@@ -11,6 +11,13 @@ TARGET_PORT="3000"  # Docker app port
 ssh -i "$SSH_KEY" $SERVER_USER@$SERVER_HOST << EOF
   set -e
 
+  echo "Removing old Nginx and SSL config for $DOMAIN..."
+  sudo rm -f /etc/nginx/sites-enabled/$DOMAIN
+  sudo rm -f /etc/nginx/sites-available/$DOMAIN
+  sudo rm -rf /etc/letsencrypt/live/$DOMAIN
+  sudo rm -rf /etc/letsencrypt/archive/$DOMAIN
+  sudo rm -f /etc/letsencrypt/renewal/$DOMAIN.conf
+
   echo "Installing Nginx and Certbot..."
   sudo apt update
   sudo apt install -y nginx certbot python3-certbot-nginx
@@ -42,7 +49,7 @@ EOL
   sudo nginx -t && sudo systemctl restart nginx
 
   echo "Requesting SSL certificate with Certbot..."
-  sudo certbot --nginx -d $DOMAIN --non-interactive --agree-tos -m admin@$DOMAIN --redirect
+  sudo certbot --nginx -d $DOMAIN --non-interactive --agree-tos -m admin@$DOMAIN --redirect --force-renewal
 
   echo "Verifying Certbot auto-renew..."
   sudo certbot renew --dry-run
