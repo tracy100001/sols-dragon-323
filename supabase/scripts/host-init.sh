@@ -1,2 +1,2 @@
 #!/bin/sh
-chmod +x ./auth-init.sh
+chmod +x ./scripts/auth-init.sh

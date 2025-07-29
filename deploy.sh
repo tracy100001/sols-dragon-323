@@ -96,8 +96,8 @@ if (( INDEX < 0 || INDEX >= ${#TARGETS[@]} )); then
 fi
 
 # Parse selected target
-IFS=' ' read -r HOST USER REMOTE_DIR SUB_DIR ENV_FILE <<< "${TARGETS[$INDEX]}"
+IFS=' ' read -r HOST USER REMOTE_DIR SUB_DIR ENV_FILE INIT_SCRIPT <<< "${TARGETS[$INDEX]}"
 
-run_stage "$HOST" "$USER" "$REMOTE_DIR" "$SUB_DIR" "$ENV_FILE"
+run_stage "$HOST" "$USER" "$REMOTE_DIR" "$SUB_DIR" "$ENV_FILE" "$INIT_SCRIPT"
 
 echo "🎉 ALL DONE — Project [$SUB_DIR] deployed to [$HOST]"
