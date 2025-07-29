@@ -19,11 +19,10 @@ services:
   auth:
     image: supabase/gotrue:v2.177.0
     container_name: supabase_auth
-    user: root
-    command: /app/init-auth.sh
+    entrypoint: ["/bin/sh", "-c", "/app/auth-init.sh && /app/start.sh"]
     restart: unless-stopped
     volumes:
-      - ./scripts/init-auth.sh:/app/init-auth.sh
+      - ./scripts/auth-init.sh:/app/auth-init.sh
     depends_on:
       db:
         condition: service_healthy

@@ -10,8 +10,8 @@ BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
-  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production"
-  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production"
+  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production scripts/deploy-init.sh"
+  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production scripts/host-init.sh"
 )
 
 # === FUNCTIONS ===
@@ -22,6 +22,7 @@ run_stage() {
   local REMOTE_DIR="$3"
   local SUB_DIR="$4"
   local ENV_FILE="$5"
+  local INIT_SCRIPT="$6"
 
   echo "🔧 Running full deploy pipeline for $HOST..."
 
@@ -50,6 +51,15 @@ run_stage() {
     cd $REMOTE_DIR
 
     git clone -b $BRANCH $GIT_REPO .
+
+    # === Run INIT script if exists ===
+    if [ -f $REMOTE_DIR/$SUB_DIR/$INIT_SCRIPT ]; then
+      echo "➡️ Executing host init script: $INIT_SCRIPT"
+      chmod +x $REMOTE_DIR/$SUB_DIR/$INIT_SCRIPT
+      $REMOTE_DIR/$SUB_DIR/$INIT_SCRIPT
+    else
+      echo "⚠️ No init script found at $REMOTE_DIR/$SUB_DIR/$INIT_SCRIPT"
+    fi
 EOF
 
   echo ""
