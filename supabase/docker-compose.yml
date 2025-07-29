@@ -19,16 +19,22 @@ services:
   auth:
     image: supabase/gotrue:v2.177.0
     container_name: supabase_auth
+    entrypoint: ["/bin/bash", "-c", "/app/init-auth.sh && /app/start.sh"]
     restart: unless-stopped
+    volumes:
+      - ./scripts/init-auth.sh:/app/init-auth.sh
     depends_on:
       db:
         condition: service_healthy
     environment:
+      DB_HOST: db
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
       GOTRUE_API_HOST: "0.0.0.0"
       GOTRUE_API_PORT: "9999"
       API_EXTERNAL_URL: ${API_EXTERNAL_URL}
       GOTRUE_DB_DRIVER: postgres
-      GOTRUE_DB_DATABASE_URL: postgres://supabase_admin:${POSTGRES_PASSWORD}@db:5432/postgres
+      GOTRUE_DB_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/postgres
       GOTRUE_SITE_URL: ${API_EXTERNAL_URL}
       GOTRUE_JWT_SECRET: ${JWT_SECRET}
     healthcheck:
