@@ -45,7 +45,7 @@ run_stage() {
     fi
 
     # Prepare project dir
-    rm -rf $REMOTE_DIR
+    sudo rm -rf $REMOTE_DIR
     mkdir -p $REMOTE_DIR
     cd $REMOTE_DIR
 
