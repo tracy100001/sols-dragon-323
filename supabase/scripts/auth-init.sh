@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo apt-get update && sudo apt-get install -y postgresql-client
+
 echo "Waiting for DB..."
 until pg_isready -h $DB_HOST -U $DB_USER; do
   sleep 1
