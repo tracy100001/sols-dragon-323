@@ -19,7 +19,7 @@ services:
   auth:
     image: supabase/gotrue:v2.177.0
     container_name: supabase_auth
-    entrypoint: ["/bin/sh", "-c", "/app/init-auth.sh && /app/start.sh"]
+    command: /app/init-auth.sh
     restart: unless-stopped
     volumes:
       - ./scripts/init-auth.sh:/app/init-auth.sh
