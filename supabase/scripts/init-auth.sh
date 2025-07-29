@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Waiting for DB..."
 until pg_isready -h $DB_HOST -U $DB_USER; do
