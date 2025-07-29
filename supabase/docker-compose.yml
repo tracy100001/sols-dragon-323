@@ -68,6 +68,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
+      RLIMIT_NOFILE: 1048576
     ports:
       - "4000:4000"
     networks:
