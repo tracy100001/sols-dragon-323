@@ -1,3 +1,3 @@
 #!/bin/sh
 ls
-chmod +x ./scripts/auth-init.sh
+chmod +x ./supabase/scripts/auth-init.sh
