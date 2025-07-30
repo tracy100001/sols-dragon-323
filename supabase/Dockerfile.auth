@@ -6,12 +6,12 @@ USER root
 # Install bash and PostgreSQL client (for pg_isready)
 RUN apk add --no-cache bash postgresql-client
 
-USER supabase
-
 COPY scripts/auth-init.sh /app/auth-init.sh
 
 # Make sure it's executable
 RUN chmod +x /app/auth-init.sh
+
+USER supabase
 
 # Start container with bash script
 ENTRYPOINT ["/bin/bash", "/app/auth-init.sh"]
