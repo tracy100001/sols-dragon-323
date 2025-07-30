@@ -17,9 +17,11 @@ services:
       retries: 10
 
   auth:
-    image: supabase/gotrue:v2.177.0
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.auth
     container_name: supabase_auth
-    entrypoint: ["/bin/sh", "-c", "/app/auth-init.sh && /app/start.sh"]
+    entrypoint: ["/bin/bash", "-c", "/app/auth-init.sh && /app/start.sh"]
     restart: unless-stopped
     volumes:
       - ./scripts/auth-init.sh:/app/auth-init.sh

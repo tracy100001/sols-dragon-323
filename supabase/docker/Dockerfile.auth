@@ -1,0 +1,14 @@
+# Start FROM the same Supabase Auth image
+FROM supabase/gotrue:v2.177.0
+
+# Install bash and PostgreSQL client (for pg_isready)
+RUN apk add --no-cache bash postgresql-client
+
+# Set working directory
+WORKDIR /app
+
+# Make sure it's executable
+RUN chmod +x /app/auth-init.sh
+
+# Start container with bash script
+ENTRYPOINT ["/bin/bash", "/app/auth-init.sh"]

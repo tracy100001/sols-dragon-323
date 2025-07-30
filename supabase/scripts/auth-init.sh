@@ -1,6 +1,4 @@
-#!/bin/sh
-
-apt-get update && apt-get install -y postgresql-client
+#!/bin/bash
 
 echo "Waiting for DB..."
 until pg_isready -h $DB_HOST -U $DB_USER; do
