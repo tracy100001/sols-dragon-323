@@ -11,6 +11,8 @@ USER supabase
 # Set working directory
 WORKDIR /app
 
+COPY ./scripts/auth-init.sh /app/auth-init.sh
+
 # Make sure it's executable
 RUN chmod +x /app/auth-init.sh
 
