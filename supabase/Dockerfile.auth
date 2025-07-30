@@ -13,5 +13,4 @@ RUN chmod +x /app/auth-init.sh
 
 USER supabase
 
-# Start container with bash script
-ENTRYPOINT ["/bin/bash", "/app/auth-init.sh"]
+
