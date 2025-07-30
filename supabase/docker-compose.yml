@@ -18,7 +18,7 @@ services:
 
   auth:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile.auth
     container_name: supabase_auth
     entrypoint: ["/bin/bash", "-c", "/app/auth-init.sh && /app/start.sh"]
