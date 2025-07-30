@@ -8,9 +8,6 @@ RUN apk add --no-cache bash postgresql-client
 
 USER supabase
 
-# Set working directory
-WORKDIR /app
-
 COPY ../scripts/auth-init.sh /app/auth-init.sh
 
 # Make sure it's executable
