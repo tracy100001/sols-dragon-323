@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: Dockerfile.auth
     container_name: supabase_auth
-    entrypoint: ["/bin/bash", "-c", "/app/auth-init.sh && /app/start.sh"]
+    entrypoint: ["/bin/bash", "-c", "/app/auth-init.sh  && exec /gotrue"]
     restart: unless-stopped
     volumes:
       - ./scripts/auth-init.sh:/app/auth-init.sh
