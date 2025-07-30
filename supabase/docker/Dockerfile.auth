@@ -1,8 +1,12 @@
 # Start FROM the same Supabase Auth image
 FROM supabase/gotrue:v2.177.0
 
+USER root
+
 # Install bash and PostgreSQL client (for pg_isready)
 RUN apk add --no-cache bash postgresql-client
+
+USER supabase
 
 # Set working directory
 WORKDIR /app
