@@ -8,11 +8,8 @@ done
 
 # Run your auth init script
 echo "🚀 Running auth-init.sh..."
-/bin/bash /app/auth-init.sh
+/app/auth-init.sh
 
 # Finally, call the original gotrue startup
 echo "✅ Starting GoTrue..."
-
-ls
-
-exec /gotrue
+/app/entrypoint.sh
