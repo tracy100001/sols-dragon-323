@@ -79,13 +79,6 @@ EOF
 
     docker compose pull || true
     docker compose up -d --build
-
-    # Wait until the auth container is fully up (optional but recommended)
-    echo "⏳ Waiting for auth service to be ready..."
-    sleep 5 # or implement a health check or pg_isready loop
-
-    # Run the auth init script inside the container
-    docker compose exec supabase_auth /bin/bash /app/auth-init.sh
 EOF
 
   echo "✅ $SUB_DIR deployed to $HOST successfully."

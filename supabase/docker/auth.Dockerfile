@@ -1,16 +1,16 @@
-# Start FROM the same Supabase Auth image
 FROM supabase/gotrue:v2.177.0
 
 USER root
 
-# Install bash and PostgreSQL client (for pg_isready)
+# Install dependencies
 RUN apk add --no-cache bash postgresql-client
 
+# Copy custom scripts
 COPY ./scripts/auth-init.sh /app/auth-init.sh
+COPY ./scripts/entrypoint-wrapper.sh /app/entrypoint.sh
 
-# Make sure it's executable
-RUN chmod +x /app/auth-init.sh
+RUN chmod +x /app/auth-init.sh /app/entrypoint.sh
 
 USER supabase
 
-
+ENTRYPOINT ["/app/entrypoint.sh"]
