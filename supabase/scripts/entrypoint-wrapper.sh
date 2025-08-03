@@ -12,4 +12,4 @@ echo "🚀 Running auth-init.sh..."
 
 # Finally, call the original gotrue startup
 echo "✅ Starting GoTrue..."
-/app/entrypoint.sh
+exec auth

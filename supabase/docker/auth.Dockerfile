@@ -1,4 +1,4 @@
-FROM supabase/gotrue:v2.177.0
+FROM supabase/gotrue:v2.178.0-rc.4
 
 USER root
 
