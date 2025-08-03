@@ -12,4 +12,7 @@ echo "🚀 Running auth-init.sh..."
 
 # Finally, call the original gotrue startup
 echo "✅ Starting GoTrue..."
+
+ls
+
 exec /gotrue
