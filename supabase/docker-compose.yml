@@ -17,7 +17,7 @@ services:
       retries: 10
 
   auth:
-    image: supabase/gotrue:v2.177.0
+    image: supa_custom_image/gotrue:v2.177.0
     build:
       context: .
       dockerfile: docker/auth.Dockerfile
