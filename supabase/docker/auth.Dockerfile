@@ -6,9 +6,7 @@ USER root
 # Install bash and PostgreSQL client (for pg_isready)
 RUN apk add --no-cache bash postgresql-client
 
-COPY scripts/auth-init.sh /app/auth-init.sh
-
-RUN ls -la /app
+COPY ./scripts/auth-init.sh /app/auth-init.sh
 
 # Make sure it's executable
 RUN chmod +x /app/auth-init.sh
