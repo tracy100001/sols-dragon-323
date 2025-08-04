@@ -436,7 +436,7 @@ services:
       retries: 3
     environment:
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
-    command: ["/usr/local/bin/vector", "--config", "/etc/vector.toml"]
+    command: ["--config", "/etc/vector.toml"]
     ports:
       - "9001:9001"
     security_opt:
