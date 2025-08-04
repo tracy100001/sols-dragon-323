@@ -419,6 +419,7 @@ services:
     image: timberio/vector:0.28.1-alpine
     restart: unless-stopped
     volumes:
+      - ./volumes/logs/vector.toml:/etc/vector/vector.toml:ro,z
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro,z
     healthcheck:
       test:
@@ -428,14 +429,16 @@ services:
           "--no-verbose",
           "--tries=1",
           "--spider",
-          "http://vector:9001/health",
+          "http://localhost:9001/health",
         ]
       timeout: 5s
       interval: 5s
       retries: 3
     environment:
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
-    command: ["--config", "/etc/vector/vector.toml"]
+    command: ["vector", "--config", "/etc/vector/vector.toml"]
+    ports:
+      - "9001:9001"
     security_opt:
       - "label=disable"
 
