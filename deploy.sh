@@ -48,10 +48,13 @@ run_stage() {
 
     # Prepare project dir
     sudo rm -rf $REMOTE_DIR
+
+    sudo chown -R $USER:$USER .
+
     mkdir -p $REMOTE_DIR
     cd $REMOTE_DIR
 
-    sudo chown -R $USER:$USER .
+    echo "Cloning repository branch: $BRANCH..."
     git clone -b $BRANCH $GIT_REPO .
 
     # === Run INIT script if exists ===
