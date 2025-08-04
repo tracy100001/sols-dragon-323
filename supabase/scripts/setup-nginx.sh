@@ -2,7 +2,7 @@
 
 # === Config ===
 DOMAIN="studio.solsticecinematics.com"
-TARGET_PORT="3001"  # Docker app port
+TARGET_PORT="3000"  # Docker app port
 
 set -e
 

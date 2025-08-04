@@ -51,6 +51,7 @@ run_stage() {
     mkdir -p $REMOTE_DIR
     cd $REMOTE_DIR
 
+    sudo chown -R $USER:$USER .
     git clone -b $BRANCH $GIT_REPO .
 
     # === Run INIT script if exists ===
