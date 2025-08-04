@@ -111,7 +111,7 @@ services:
       - "3001:3000"
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      STUDIO_PG_META_URL: http://db:8080
+      STUDIO_PG_META_URL: http://meta:8080
       SUPABASE_URL: ${API_EXTERNAL_URL}
       SUPABASE_ANON_KEY: ${ANON_KEY}
       AUTH_JWT_SECRET: ${JWT_SECRET}

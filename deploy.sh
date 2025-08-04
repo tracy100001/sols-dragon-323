@@ -10,8 +10,8 @@ BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
-  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production scripts/deploy-init.sh"
-  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production scripts/host-init.sh"
+  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production scripts/host-init.sh scripts/setup-nginx.sh"
+  "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production scripts/host-init.sh scripts/setup-nginx.sh"
 )
 
 # === FUNCTIONS ===
@@ -23,6 +23,7 @@ run_stage() {
   local SUB_DIR="$4"
   local ENV_FILE="$5"
   local INIT_SCRIPT="$6"
+  local NGINX_SCRIPT="$7"
 
   echo "🔧 Running full deploy pipeline for $HOST..."
 
@@ -79,6 +80,15 @@ EOF
 
     docker compose pull || true
     docker compose up -d --build
+
+    # === Run NGINX script if exists ===
+    if [ -f $REMOTE_DIR/$SUB_DIR/$NGINX_SCRIPT ]; then
+      echo "➡️ Executing nginx setup script: $NGINX_SCRIPT"
+      chmod +x $REMOTE_DIR/$SUB_DIR/$NGINX_SCRIPT
+      $REMOTE_DIR/$SUB_DIR/$NGINX_SCRIPT
+    else
+      echo "⚠️ No nginx script found at $REMOTE_DIR/$SUB_DIR/$NGINX_SCRIPT"
+    fi
 EOF
 
   echo "✅ $SUB_DIR deployed to $HOST successfully."
@@ -96,8 +106,8 @@ if (( INDEX < 0 || INDEX >= ${#TARGETS[@]} )); then
 fi
 
 # Parse selected target
-IFS=' ' read -r HOST USER REMOTE_DIR SUB_DIR ENV_FILE INIT_SCRIPT <<< "${TARGETS[$INDEX]}"
+IFS=' ' read -r HOST USER REMOTE_DIR SUB_DIR ENV_FILE INIT_SCRIPT NGINX_SCRIPT <<< "${TARGETS[$INDEX]}"
 
-run_stage "$HOST" "$USER" "$REMOTE_DIR" "$SUB_DIR" "$ENV_FILE" "$INIT_SCRIPT"
+run_stage "$HOST" "$USER" "$REMOTE_DIR" "$SUB_DIR" "$ENV_FILE" "$INIT_SCRIPT" "$NGINX_SCRIPT"
 
 echo "🎉 ALL DONE — Project [$SUB_DIR] deployed to [$HOST]"
