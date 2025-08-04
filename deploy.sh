@@ -6,7 +6,7 @@ set -e
 
 KEY_PATH="$HOME/Downloads/sols-keypair.pem"
 GIT_REPO="https://github.com/tracy100001/sols-dragon-323.git"
-BRANCH="main"
+BRANCH="default-dockerfile"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
