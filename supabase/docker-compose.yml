@@ -419,7 +419,7 @@ services:
     image: timberio/vector:0.28.1-alpine
     restart: unless-stopped
     volumes:
-      - ./volumes/logs/vector.toml:/etc/vector.toml:ro
+      - ./volumes/logs/vector.yml:/etc/vector.yml:ro
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro
     healthcheck:
       test:
@@ -436,7 +436,7 @@ services:
       retries: 3
     environment:
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
-    command: ["--config", "/etc/vector.toml"]
+    command: ["--config", "/etc/vector.yml"]
     ports:
       - "9001:9001"
     security_opt:
