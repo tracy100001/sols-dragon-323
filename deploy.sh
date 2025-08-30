@@ -6,11 +6,11 @@ set -e
 
 KEY_PATH="$HOME/Downloads/sols-keypair.pem"
 GIT_REPO="https://github.com/tracy100001/sols-dragon-323.git"
-BRANCH="default-dockerfile"
+BRANCH="main"
 
 # Define array of targets: "host user remote_dir sub_dir env_file"
 TARGETS=(
-  "ec2-18-116-21-198.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env.production scripts/host-init.sh scripts/setup-nginx.sh"
+  "ec2-13-59-214-169.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice website .env scripts/host-init.sh scripts/setup-nginx.sh"
   "ec2-18-223-109-109.us-east-2.compute.amazonaws.com ubuntu /home/ubuntu/solstice supabase .env.production scripts/host-init.sh scripts/setup-nginx.sh"
 )
 

@@ -2,9 +2,9 @@
 
 # === Config ===
 SERVER_USER="ubuntu"
-SERVER_HOST="ec2-18-223-109-109.us-east-2.compute.amazonaws.com"
+SERVER_HOST="ec2-13-59-214-169.us-east-2.compute.amazonaws.com"
 SSH_KEY="$HOME/Downloads/sols-keypair.pem"
-DOMAIN="studio.solsticecinematics.com"
+DOMAIN="solsticecinematicsproductions.com"
 TARGET_PORT="3000"  # Docker app port
 
 # === SSH Command ===
